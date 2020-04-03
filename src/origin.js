@@ -1,1 +1,1 @@
-export default "http://localhost:1505";
+export default "https://server-trang8.herokuapp.com";
