@@ -173,7 +173,7 @@ export default class Avatar extends Component {
     
   render() {
     return (
-        <div className="avatar" style={{backgroundImage: `url('${origin}/image/avatar/${this.props.member._id}')`}} onClick={this._HandleShowImage}>
+        <div className="avatar" style={{backgroundImage: `url('${origin}/api/image/avatar/${this.props.member._id}')`}} onClick={this._HandleShowImage}>
             {this.props.member._id === this.props.userId ?
                 <div className="changeAvatar" onClick={this.changeAvatar}>
                     Cập nhật
@@ -193,7 +193,13 @@ export default class Avatar extends Component {
                                 :
                                     <div className="status noteAvatar">
                                         <div className="extractStatus">
-                                            {this.props.member.avatar.origin.status.length > 50 ? this.props.member.avatar.origin.status.slice(0, 50) + "..." : this.props.member.avatar.origin.status || <br />}
+                                            {this.props.member.avatar.origin ?
+                                                this.props.member.avatar.origin.status.length > 50
+                                                    ? this.props.member.avatar.origin.status.slice(0, 50) + "..." 
+                                                : 
+                                                    this.props.member.avatar.origin.status || <br /> 
+                                                :"Chọn ảnh khác để tùy chỉnh"
+                                                }
                                         </div>
                                     </div>
                                 }
@@ -239,7 +245,7 @@ export default class Avatar extends Component {
                     <div className="photoViewContainer">
                         <div className="photoViewBox">
                             <div className="photoViewItem">
-                                <img src={origin + (this.props.member.avatar.origin ? "/photo/" + this.props.member.avatar.origin.image : "/image/avatar/" + this.props.member._id)} />
+                                <img src={origin + (this.props.member.avatar.origin ? "/photo/" + this.props.member.avatar.origin.image : "/api/image/avatar/" + this.props.member._id)} />
                             </div>
                         </div>
                         <div className="closeButton" title="Đóng" onClick={() => {this._HandleShowImage()}}>
