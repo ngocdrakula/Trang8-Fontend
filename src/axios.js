@@ -3,5 +3,6 @@ import origin from './origin';
 
 export default axios.create({
     baseURL: origin + '/api',
-    withCredentials: true
+    withCredentials: true,
+    headers: {'Access-Control-Allow-Origin': '*'}
 });
