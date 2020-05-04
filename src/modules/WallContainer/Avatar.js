@@ -54,7 +54,7 @@ export default class Avatar extends Component {
         }
     }
     resetAdjustAvatar = () => {
-        var avatar = origin + '/IMG/no-avatar';
+        var avatar = origin + '/IMG/no-avatar.jpg';
         var style = {
             marginTop: 0,
             marginLeft: 0,
