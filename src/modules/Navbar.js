@@ -40,7 +40,7 @@ export default class NavBar extends Component {
                     <div className="home">
                         <div className="logo">
                             <a href="/">
-                                <img src={origin + "/IMG/logo.PNG"} alt="Trang chủ" />
+                                <img src={origin + "/IMG/logo.png"} alt="Trang chủ" />
                             </a>
                         </div>
                         <form className="searchContainer" action="/search" method="get" onSubmit={this._HandleSubmitSearch} >
@@ -103,7 +103,7 @@ export default class NavBar extends Component {
                     <div className="home">
                         <div className="logo">
                             <a href="/">
-                                <img src={origin + "/IMG/logo.PNG"} alt="Trang chủ" />
+                                <img src={origin + "/IMG/logo.png"} alt="Trang chủ" />
                             </a>
                         </div>
                         <form className="searchContainer" action="/search" method="get" onSubmit={this._HandleSubmitSearch} >
