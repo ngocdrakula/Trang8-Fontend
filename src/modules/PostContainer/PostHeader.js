@@ -20,7 +20,7 @@ export default class PostHeader extends Component {
                 <div className="newsAvatar">
                     <div className="photo">
                         <a href={"/profile/" + this.props.author._id}>
-                            <img className="newsUserLink" src={origin + "/image/avatar/" + this.props.author._id}/>
+                            <img className="newsUserLink" src={origin + "/api/image/avatar/" + this.props.author._id}/>
                         </a>
                     </div>
                 </div>
