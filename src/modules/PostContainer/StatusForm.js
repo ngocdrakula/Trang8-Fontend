@@ -72,7 +72,6 @@ export default class StatusForm extends Component {
         })
     }
     formSubmit = (e) => {
-        console.log('alo')
         e.preventDefault();
         var data = new FormData();
         data.append('file', document.getElementById('photo').files[0]);
@@ -82,7 +81,6 @@ export default class StatusForm extends Component {
         if(this.props.member) data.append('to', this.props.member._id);
         axios.post('/post', data)
         .then(response => {
-            console.log(response.data)
             if(response.data.success){
                 this.setState({
                     status: '',

@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
 import axios from '../../axios';
-
+import FormButton from '../Form/FormButton';
+import EmotionList from './EmotionList';
 
 
 export default class EmotionContainer extends Component {
     state = {
     };
     constructor(props){
-        super(props);
+      super(props);
     }
     PostEmotion = (e) => {
-      if(this.props.user){
-        var data = {
-          active_id: this.props.active,
-          comment_id: this.props.comment,
-          emotion: e
+      var data = {
+        active_id: this.props.active,
+        comment_id: this.props.comment,
+        emotion: e
+      }
+      axios.post("/post/emotion", data)
+      .then(response => {
+        if(response.data){
+          if(response.data.success)
+          this.props.updateActive(response.data.data)
         }
-        axios.post("/post/emotion", data)
-        .then(response => {
-          if(response.data){
-            if(response.data.success)
-            this.props.updateActive(response.data.data)
-          }
-        })
-      }
-      else{
-        document.getElementById('login').click();
-      }
+      })
+    }
+    ShowList = () => {
+      this.setState({onShowList: !this.state.onShowList});
     }
   render() {
     var emotion = 0; var emotionIndex = -1; var emotionLengthString = ""
@@ -54,16 +53,26 @@ export default class EmotionContainer extends Component {
         <div className="emotionContainer">
           <div className="emotionList">
             {[1, 2, 3, 4, 5].map(i => {
-              return(
-                <div className={"emotion" + (i === emotion ? " used" : "")} key={i} onClick={() => {i === emotion ? this.PostEmotion(0) :this.PostEmotion(i)}}>
-                  <span className={"emotion_" + i}></span>
-                </div>
-              );
+              if(this.props.user){
+                return(
+                  <div className={"emotion" + (i === emotion ? " used" : "")} key={i} onClick={() => {i === emotion ? this.PostEmotion(0) : this.PostEmotion(i)}}>
+                    <span className={"emotion_" + i}></span>
+                  </div>
+                );
+              }
+              else{
+                return(
+                  <FormButton className="emotion" formType="login" key={i}>
+                    <span className={"emotion_" + i}></span>
+                  </FormButton>
+                )
+              }
             })}
           </div>
-          <div className="emotionNumber">
+          <div className="emotionNumber" onClick={this.ShowList}>
             {emotionLengthString}
           </div>
+          <EmotionList emotion={this.props.emotion} close={this.ShowList} onShow={this.state.onShowList}/>
         </div>
     );
   }

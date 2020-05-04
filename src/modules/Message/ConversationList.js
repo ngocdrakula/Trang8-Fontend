@@ -35,7 +35,6 @@ class ConversationList extends Component {
                     newMessage.push(con.leader.user);
                   }
                 }
-                else{console.log('dell')}
               }
             }
             if(conversations[i].conversation.message[0].createdAt < conversations[j].conversation.message[0].createdAt){

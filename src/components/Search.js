@@ -11,7 +11,7 @@ export default class Search extends Component {
       <div  className="news">
         Trang web đang được xây dựng
         <br />
-        q: {this.props.q}
+        key: {this.props.q}
       </div>
       );
   }

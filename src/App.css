@@ -4,9 +4,9 @@ body{
   background-color: #FCFEF5;
   font-size: 16px;
   font-weight: 400;
-  font-family: inherit;
-  word-wrap: break-word;
   font-family: "source sans pro,sans-serif";
+  font-family: "Times New Roman" , Times, serif;
+  word-wrap: break-word;
 }
 textarea{
   font-family: Helvetica, Arial, sans-serif;
@@ -733,18 +733,6 @@ input[type=submit]{
   font-size: 15px;
   cursor: pointer;
 }
-.activeContainer .show{
-  background-color: #E3F9D1;
-  padding: 5px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-bottom: 5px;
-  min-width: 150px;
-  font-size: 15px;
-}
-.activeContainer .show:hover{
-  background-color: #B3D897;
-}
 .emotion{
   margin: 1px 0px;
   width: 24px;
@@ -789,6 +777,63 @@ input[type=submit]{
 }
 .emotion_5{
   background-position-x: 100%;
+}
+.emotionListBox{
+  width: 260px;
+  background-color: #E3F9D1;
+  border-radius: 5px;
+  margin: auto;
+  position: relative;
+}
+.emotionListTitle{
+  background-color: #E3F9D1;
+  margin: 10px 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.emotionListContainer{
+  background-color: #E3F9D1;
+  margin: 10px;
+  overflow: hidden;
+}
+.emotionListSelect{
+  display: flex;
+  margin: 10px 0px;
+  border-bottom: 1px solid #B3D897;
+}
+.emotionListSelect .emotionContainer{
+  margin: 0px 5px;
+  padding: 0px 5px;
+  border-bottom: 2px solid #E3F9D1;
+}
+.emotionListSelect .selected{
+  border-bottom: 2px solid red;
+}
+.emotionListData{
+  overflow-y: auto;
+  height: 250px;
+}
+.emotionListData::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+}
+.emotionAuthorLine{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #CCF5AC;
+}
+.activeContainer .show{
+  background-color: #E3F9D1;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  min-width: 150px;
+  font-size: 15px;
+}
+.activeContainer .show:hover{
+  background-color: #B3D897;
 }
 .writeComment{
   margin: 10px 0px 0px 60px;

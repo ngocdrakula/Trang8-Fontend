@@ -117,10 +117,8 @@ export default class Cover extends Component {
         if(this.state.newCover){
             dataImage.append('file', this.state.newCover);
         }
-        console.log(this.state.newCover)
         axios.post('/post', dataImage)
         .then(response => {
-            console.log(response.data)
             if(response.data){
                 if(response.data.success){
                     window.location.reload();
