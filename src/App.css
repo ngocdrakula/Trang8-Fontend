@@ -754,7 +754,7 @@ input[type=submit]{
   align-items: center;
 }
 .emotion_1, .emotion_2, .emotion_3, .emotion_4, .emotion_5{
-  background-image: url('/icon/emotion.PNG');
+  background-image: url('/icon/emotion.png');
   background-repeat: no-repeat;
   background-size: 500% 100%;
   overflow: hidden;
