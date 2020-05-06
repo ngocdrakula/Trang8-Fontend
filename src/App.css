@@ -287,7 +287,7 @@ input[type=submit]{
   min-width: 8px;
   padding: 3px 10px;
   text-indent: -999px;
-  background-image: url('http://localhost:1505/IMG/icon/showButton.png');
+  background-image: url('/icon/showButton.png');
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: center ;
@@ -336,7 +336,7 @@ input[type=submit]{
   width: 40px;
   height: 16px;
   text-indent: -999px;
-  background-image: url('http://localhost:1505/IMG/icon/flange.png');
+  background-image: url('/icon/flange.png');
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: center ;
@@ -754,7 +754,7 @@ input[type=submit]{
   align-items: center;
 }
 .emotion_1, .emotion_2, .emotion_3, .emotion_4, .emotion_5{
-  background-image: url('http://localhost:1505/IMG/icon/emotion.PNG');
+  background-image: url('/icon/emotion.PNG');
   background-repeat: no-repeat;
   background-size: 500% 100%;
   overflow: hidden;
@@ -1278,7 +1278,7 @@ input[type=submit]{
 }
 .hiddenSelect{
   padding: 4px 18px 4px 4px;
-  background-image: url('http://localhost:1505/IMG/icon/showButton.png');
+  background-image: url('/icon/showButton.png');
   background-size: 10px;
   background-repeat: no-repeat;
   background-position: center;
