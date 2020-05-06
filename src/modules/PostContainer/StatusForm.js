@@ -91,7 +91,7 @@ export default class StatusForm extends Component {
                 })
             }
             else{
-
+                console.log(response.data);
             }
         })
         .catch(err => {
@@ -172,14 +172,25 @@ export default class StatusForm extends Component {
                                     {this.state.image ? "Chọn ảnh khác" : "Thêm ảnh"}
                                 </label>
                             </div>
-                            <div className="input">
-                                <select name="privacy" onChange={this.inputChange} value={this.state.privacy || 3}>
-                                    <option value="3">Công khai</option>
-                                    <option value="2">Bạn bè</option>
-                                    <option value="1">Chỉ mình tôi</option>
-                                </select>
-                                <input type="submit" value="Chia sẻ" />
-                            </div>
+                                {this.props.user ?
+                                <div className="input">
+                                    <select name="privacy" onChange={this.inputChange} value={this.state.privacy || 3}>
+                                        <option value="3">Công khai</option>
+                                        <option value="2">Bạn bè</option>
+                                        <option value="1">Chỉ mình tôi</option>
+                                    </select>
+                                    <input type="submit" value="Chia sẻ" />
+                                </div>
+                            : 
+                                <FormButton formType='login' className="input">
+                                    <select name="privacy">
+                                        <option value="3">Công khai</option>
+                                        <option value="2">Bạn bè</option>
+                                        <option value="1">Chỉ mình tôi</option>
+                                    </select>
+                                    <input type="submit" value="Chia sẻ" />
+                                </FormButton>
+                            }
                         </div>
                     </form>
                 </div>
