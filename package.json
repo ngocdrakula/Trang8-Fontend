@@ -1,6 +1,6 @@
 {
   "name": "fontend",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "proxy": "https://server-trang8.herokuapp.com/",
   "dependencies": {
