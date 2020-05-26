@@ -29,7 +29,8 @@ export default class LoginForm extends Component {
         axios.post('/user/login', data)
         .then(response => {
             if(response.data.success)
-                window.location.reload();
+                // window.location.reload();
+                console.log('response.data', response.data)
             else{
                 this.setState({key: response.data.key, warnMessage: response.data.err});
             }
